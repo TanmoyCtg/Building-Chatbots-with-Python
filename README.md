@@ -22,3 +22,87 @@ def respond(message):
     # Return the result
     return bot_message
 ```
+# EchoBot II
+Having written your respond() function, I'll now define a function called send_message() with a single parameter message which logs the message and the bot's response.
+
+```python
+
+# Define a function that sends a message to the bot: send_message
+def send_message(message):
+    # Print user_template including the user_message
+    print(user_template.format(message))
+    # Get the bot's response to the message
+    response = respond(message)
+    # Print the bot template including the bot's response.
+    print(bot_template.format(response))
+
+# Send a message to the bot
+send_message("hello")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
