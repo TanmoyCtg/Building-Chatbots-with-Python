@@ -236,9 +236,9 @@ def respond(message):
     response, phrase = match_rule(rules, message)
     if '{0}' in response:
         # Replace the pronouns in the phrase
-        phrase = replace_pronouns(message)
+        phrase = replace_pronouns(phrase)
         # Include the phrase in the response
-        response = phrase.format(response)
+        response = response.format(phrase)
     return response
 
 # Send the messages
