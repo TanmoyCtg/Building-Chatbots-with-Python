@@ -159,7 +159,7 @@ send_message("I love building chatbots")
 send_message("I love building chatbots")
 ```
 # JOY II: Extracting key phrases
-The really clever thing about ELIZA is the way the program appears to understand what you told it, by occasionally including phrases uttered by the user in its responses.
+The really clever thing about JOY is the way the program appears to understand what you told it, by occasionally including phrases uttered by the user in its responses.
 I will match messages against some common patterns and extract phrases using re.search(). A dictionary called rules has already been defined, which matches the following patterns:
 "do you think (.*)"
 "do you remember (.*)"
@@ -187,6 +187,38 @@ def match_rule(rules, message):
 # Test match_rule
 print(match_rule(rules, "do you remember your last birthday"))
 ```
+# ELIZA III: Pronouns
+To make responses grammatically coherent, I transform the extracted phrases from first to second person and vice versa. In English, conjugating verbs is easy, and simply swapping "I" and 'you', "my" and "your" works in most cases
+
+In this exercise, you'll define a function called replace_pronouns() which uses re.sub() to map "me" and "my" to "you" and "your" (and vice versa) in a string.
+
+```python
+
+# Define replace_pronouns()
+def replace_pronouns(message):
+
+    message = message.lower()
+    if 'me' in message:
+        # Replace 'me' with 'you'
+        return re.sub('me', 'you', message)
+    if 'my' in message:
+        # Replace 'my' with 'your'
+        return re.sub('my', 'your', message)
+    if 'your' in message:
+        # Replace 'your' with 'my'
+        return re.sub('your', 'my', message)
+    if 'you' in message:
+        # Replace 'you' with 'me'
+        return re.sub('you', 'me', message)
+
+    return message
+
+print(replace_pronouns("my last birthday"))
+print(replace_pronouns("when you went to Florida"))
+print(replace_pronouns("I had my own castle"))
+```
+
+
 
 
 
